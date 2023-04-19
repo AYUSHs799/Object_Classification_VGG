@@ -63,5 +63,3 @@ MLP is unable to perform as good as VGG16 even though have similar number of par
 
 CNN architecture like VGG  work well with data that has a spatial relationship. Therefore CNNs are go-to method for any type of prediction problem involving image data as an input.The benefit of using CNNs is their ability to develop an internal representation of a two-dimensional image. This allows the model to learn position and scale in variant structures in the data, which is important when working with images.
 
-
-----
