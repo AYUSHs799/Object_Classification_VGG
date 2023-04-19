@@ -33,24 +33,18 @@ Testing accuracy is increasing with the increase in number of model parameters. 
 Number of model parameters is increasing with the increase in number of layers within the model. VGG1 is however an exception to this rule. This is because VGG1 has less numbers of VGG blocks hence the size of image is not reduced. When this image is flattened out and connected to fully connected layers, the number of parameters increases.
 
 
----
-
+<br>
 
 ## <b> Data Augmentation </b>
-
-<br>
 
 Training deep learning neural network models on more data can result in more skillful models, and the augmentation techniques can create variations of the images that can improve the ability of the fit models to generalize what they have learned to new images.
 
 Image data augmentation is a technique that can be used to artificially expand the size of a training dataset by creating modified versions of images in the dataset.Data augmentation can also act as a regularization technique, adding noise to the training data, and encouraging the model to learn the same features, invariant to their position in the input.
 
-
----
-
-
+<br>
 
 ## <b> Epochs vs Model Performance </b> 
-<br>
+
 As the number of epochs increases, the model performance increases. This is because the model is able to learn more complex patterns in the data. However, the model performance saturates after a certain number of epochs. This is because the model is overfitting the train data as the epochs increases.
 
 <br>
@@ -61,10 +55,7 @@ As the number of epochs increases, the model performance increases. This is beca
 
 As evident from the graph above the model performance saturates after 30 epochs. This is because the model is overfitting the train data as the epochs increases.
 
-
-
-----
-
+<b>
 
 ## <b> MLPs vs VGG16 </b>
 
