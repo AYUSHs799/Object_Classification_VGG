@@ -10,7 +10,7 @@
 | Pre-trained VGG16  | 1554.3 s | 0.0321   |  100.00 |92.424 |17,082,433 |    
 |MLP|  295.5 s | 0.0052 | 100.00 |  75.758 |  17,083,585 |
 
----
+
 <br>
 
 ### <b>Training time.</b> 
@@ -55,7 +55,7 @@ As the number of epochs increases, the model performance increases. This is beca
 
 As evident from the graph above the model performance saturates after 30 epochs. This is because the model is overfitting the train data as the epochs increases.
 
-<b>
+<br>
 
 ## <b> MLPs vs VGG16 </b>
 
