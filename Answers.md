@@ -13,24 +13,22 @@
 
 <br>
 
+### <b> Number of model parameters </b>
+Number of model parameters is increasing with the increase in number of layers within the model. VGG1 is however an exception to this rule. This is because VGG1 has less numbers of VGG blocks hence the size of image is not reduced. When this image is flattened out and connected to fully connected layers, the number of parameters increases.
+
 ### <b>Training time.</b> 
-Training time is increasing with the increase in number of model parameters. Model parameters will increase with increase in number of layers and number of filters in each layer. VGG 1 block is however taking more time than VGG 3 block. This is because VGG 1 block has more number of parameters than VGG 3 block.
+Training time is increasing with the increase in number of model parameters. Model parameters will increase with increase in number of layers and number of filters in each layer. 
 
 ### <b> Training loss </b>
-Training loss is decreasing with the increase in number of model parameters. This is because with increase in number of model parameters, model is able to learn more complex patterns in the data.
+Training loss is decreasing with the increase in number of model parameters. This is because with increase in number of model parameters, model is able to learn more complex patterns in the data. VGG3 with data augmentation shows more loss than VGG3 without data augmentation. This is because VGG3 with data augmentation is overfitting the train data as the epochs increases.
 
 ### <b> Training accuracy </b>
 Training accuracy is increasing with the increase in number of model parameters. This is because with increase in number of model parameters, model is able to learn more complex patterns in the data.
 
 ### <b> Testing accuracy </b>
-Testing accuracy is increasing with the increase in number of model parameters. This is because with increase in number of model parameters, model is able to learn more complex patterns in the data.
+Testing accuracy is increasing with the increase in number of model parameters. This is because with increase in number of model parameters, model is able to learn more complex patterns in the data. MLPs and VGG1 is an exception to this rule. This is because MLPs and VGG1 are not able to learn complex patterns in the data.
 
 <u>Note:</u> Training accuracy and testing accuracy are not same because model is overfitting the train data as the epochs increases. 
-
-### <b> Number of model parameters </b>
-
-
-Number of model parameters is increasing with the increase in number of layers within the model. VGG1 is however an exception to this rule. This is because VGG1 has less numbers of VGG blocks hence the size of image is not reduced. When this image is flattened out and connected to fully connected layers, the number of parameters increases.
 
 
 <br>
