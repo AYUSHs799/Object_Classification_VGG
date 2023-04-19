@@ -32,11 +32,9 @@ Testing accuracy is increasing with the increase in number of model parameters. 
 
 Number of model parameters is increasing with the increase in number of layers within the model. VGG1 is however an exception to this rule. This is because VGG1 has less numbers of VGG blocks hence the size of image is not reduced. When this image is flattened out and connected to fully connected layers, the number of parameters increases.
 
-<br>
 
 ---
 
-<br>
 
 ## <b> Data Augmentation </b>
 
@@ -46,11 +44,10 @@ Training deep learning neural network models on more data can result in more ski
 
 Image data augmentation is a technique that can be used to artificially expand the size of a training dataset by creating modified versions of images in the dataset.Data augmentation can also act as a regularization technique, adding noise to the training data, and encouraging the model to learn the same features, invariant to their position in the input.
 
-<br>
 
 ---
 
-<br>
+
 
 ## <b> Epochs vs Model Performance </b> 
 <br>
@@ -64,11 +61,10 @@ As the number of epochs increases, the model performance increases. This is beca
 
 As evident from the graph above the model performance saturates after 30 epochs. This is because the model is overfitting the train data as the epochs increases.
 
-<br>
+
 
 ----
 
-<br>
 
 ## <b> MLPs vs VGG16 </b>
 
@@ -76,6 +72,5 @@ MLP is unable to perform as good as VGG16 even though have similar number of par
 
 CNN architecture like VGG  work well with data that has a spatial relationship. Therefore CNNs are go-to method for any type of prediction problem involving image data as an input.The benefit of using CNNs is their ability to develop an internal representation of a two-dimensional image. This allows the model to learn position and scale in variant structures in the data, which is important when working with images.
 
-<br>
 
 ----
