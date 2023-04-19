@@ -20,7 +20,7 @@ Number of model parameters is increasing with the increase in number of layers w
 Training time is increasing with the increase in number of model parameters. Model parameters will increase with increase in number of layers and number of filters in each layer. 
 
 ### <b> Training loss </b>
-Training loss is decreasing with the increase in number of model parameters. This is because with increase in number of model parameters, model is able to learn more complex patterns in the data. VGG3 with data augmentation shows more loss than VGG3 without data augmentation. This is because VGG3 with data augmentation is overfitting the train data as the epochs increases.
+Training loss is decreasing with the increase in number of model parameters. This is because with increase in number of model parameters, model is able to learn more complex patterns in the data. VGG3 with data augmentation shows more loss than VGG3 without data augmentation. This is because VGG3 without data augmentation is able to overfit the train data as the epochs increases while VGG3 with augmentation cannot do so. Data augemtaion is a regularization technique, adding noise to the training data, and encouraging the model to learn the same features, invariant to their position in the input. This makes the model move away from the overfitting region due to which loss is more.
 
 ### <b> Training accuracy </b>
 Training accuracy is increasing with the increase in number of model parameters. This is because with increase in number of model parameters, model is able to learn more complex patterns in the data.
