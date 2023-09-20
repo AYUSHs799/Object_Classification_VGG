@@ -1,4 +1,4 @@
-# <b> Comparing Various variants of VGG with MLP </b>
+# <b> Comparing Various variants of VGG and MLP </b>
 
 I am using the DuckDuckGo API to download images for my project. Downloaded 100 images of two classes - I chose Anteater and Capibara as my classes. After downloading 100 images of both the classes i have compared various variants of VGG with MLP. I have also compared the performance of VGG16 with an MLP having similar number of model parameters.
 
