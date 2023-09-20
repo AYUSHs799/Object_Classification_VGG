@@ -1,4 +1,5 @@
-# <b> Observations </b>
+# <b> Comparing Various variants of VGG with MLP </b>
+
 <br>
 
 

@@ -1,63 +1,67 @@
-# General instructions
+# <b> Comparing Various variants of VGG with MLP </b>
 
-1. Feel free to use any framework of your choice: PyTorch, JAX (+Flax/Equinox), Tensorflow (+Keras)
+I am using the DuckDuckGo API to download images for my project. Downloaded 100 images of two classes - I chose Anteater and Capibara as my classes. After downloading 100 images of both the classes i have compared various variants of VGG with MLP. I have also compared the performance of VGG16 with and without data augmentation.
 
-2. We are not providing any code template. However, it is recommended you adhere to high code quality standards.
+<br>
 
-3. Feel free to make use of ChatGPT, CoPilot, etc. like tools. Cite where you used them. However, you should still be able to explain your code during the viva. Also, you need to be careful with the hallucinations of these tools!
+## <b> Observations </b>
 
-4. As before, this assignment is in a group of two students. You do not need to submit the assignment but can show your private repo to the TA during the viva.
+|Model  | Training Time        | Training Loss  | Training Accuracy | Testing Accuracy | Number of model parameter |
+| :--------------:|:----------------:|:-------------:| :---------------:|:-------------:|:------------:|
+| VGG (1 block) | 505.7 s      | 0.0131 | 100.00 |69.70 |40,969,345 |
+| VGG (3 block) | 359.5 s     | 0.0578      |   100.00 |77.273 |10,341,697 |
+| VGG (3 block) with data augmentation | 437.6 s | 0.3768      |    88.50 |83.333 |10,341,697 |
+| Pre-trained VGG16  | 1554.3 s | 0.0321   |  100.00 |92.424 |17,082,433 |    
+|MLP|  295.5 s | 0.0052 | 100.00 |  75.758 |  17,083,585 |
 
-----
 
-In this question, you have to compare the performance on a binary classification task of the following models:
+<br>
 
-* VGG (1 block)
-* VGG (3 blocks)
-* VGG (3 blocks) with data augmentation
-* Transfer learning using VGG16 or VGG19
+### <b> Number of model parameters </b>
+Number of model parameters is increasing with the increase in number of layers within the model. VGG1 is however an exception to this rule. This is because VGG1 has less numbers of VGG blocks hence the size of image is not reduced. When this image is flattened out and connected to fully connected layers, the number of parameters increases.
 
-Refer this [article](https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network-to-classify-photos-of-dogs-and-cats/) You do not need to write your own code. You can reuse the code from the post. Or, you could roll out your own implemenation. Either way, you should be able to explain your code during the viva.
+### <b>Training time.</b> 
+Training time is increasing with the increase in number of model parameters. Model parameters will increase with increase in number of layers and number of filters in each layer. 
 
-You need to create the dataset on your own based on your first names. For instance if the first name of the team members are: Siya and Raghav, they can choose a dataset of their liking based on any names, place, animal or thing. As examples:
+### <b> Training loss </b>
+Training loss is decreasing with the increase in number of model parameters. This is because with increase in number of model parameters, model is able to learn more complex patterns in the data. VGG3 with data augmentation shows more loss than VGG3 without data augmentation. This is because VGG3 without data augmentation is able to overfit the train data as the epochs increases while VGG3 with augmentation cannot do so. Data augemtaion is a regularization technique, adding noise to the training data, and encouraging the model to learn the same features, invariant to their position in the input. This makes the model move away from the overfitting region due to which loss is more.
 
-* Seoul v/s Riyadh
-* Snake v/s Rat
-* Squirrel v/s Rabbit
-* Sambhar v/s Roti
+### <b> Training accuracy </b>
+Training accuracy is increasing with the increase in number of model parameters. This is because with increase in number of model parameters, model is able to learn more complex patterns in the data.
 
-You can refer to [resource 1](https://python.plainenglish.io/how-to-automatically-download-bulk-images-for-your-dataset-using-python-f1efffba7a03) or [resource](https://github.com/JorgePoblete/DuckDuckGoImages) 2 or plainly download 100 images of both classes (total 200 images). Of these 100 images of each class, we will use 80 for training and 20 for testing. You get 1 mark for dataset creation [1 mark]
+### <b> Testing accuracy </b>
+Testing accuracy is increasing with the increase in number of model parameters. This is because with increase in number of model parameters, model is able to learn more complex patterns in the data. MLPs and VGG1 is an exception to this rule. This is because MLPs and VGG1 are not able to learn complex patterns in the data.
 
-Create a table with models as rows and the following columns [2 marks (0.5 marks for each model)]
+<u>Note:</u> Training accuracy and testing accuracy are not same because model is overfitting the train data as the epochs increases. 
 
-* Training time
-* Training loss
-* Training accuracy
-* Testing accuracy
-* Number of model parameters
 
-We will now be using Tensorboard for visualizing network performance. You are suggested to refer to:
+<br>
 
-* PyTorch + Tensorboard
-* Tensorflow + Tensorboard
+## <b> Data Augmentation </b>
 
-Use Tensorboard to log the following and present screenshots/images [1 mark]
+Training deep learning neural network models on more data can result in more skillful models, and the augmentation techniques can create variations of the images that can improve the ability of the fit models to generalize what they have learned to new images.
 
-### <b> Scalars </b>
+Image data augmentation is a technique that can be used to artificially expand the size of a training dataset by creating modified versions of images in the dataset.Data augmentation can also act as a regularization technique, adding noise to the training data, and encouraging the model to learn the same features, invariant to their position in the input.
 
-* Training loss v/s iterations (and not epochs)
-* Training accuracy v/s iterations (and not epochs)
-* Testing accuracy v/s iterations (and not epochs)
+<br>
 
-### <b> Images </b>
+## <b> Epochs vs Model Performance </b> 
 
-* Show all images from the test set and their predictions.
+As the number of epochs increases, the model performance increases. This is because the model is able to learn more complex patterns in the data. However, the model performance saturates after a certain number of epochs. This is because the model is overfitting the train data as the epochs increases.
 
-Now you have to present various insights. For instance, you should discuss the following: [2 marks (0.5 marks for each question)]
+<br>
 
-* Are the results as expected? Why or why not?
-* Does data augmentation help? Why or why not?
-* Does it matter how many epochs you fine tune the model? Why or why not?
-* Are there any particular images that the model is confused about? Why or why not?
+<img src = ./plots/VGG_16_plot.jpg>
 
-Now, create a MLP model with comparable number of parameters as VGG16 and compare your performance with the other models in the table. You can choose the distribution of number of neurons and number of layers. What can you conclude?  [1 mark]
+<br>
+
+As evident from the graph above the model performance saturates after 30 epochs. This is because the model is overfitting the train data as the epochs increases.
+
+<br>
+
+## <b> MLPs vs VGG16 </b>
+
+MLP is unable to perform as good as VGG16 even though have similar number of parameters. One of the main problems is that spatial information is lost when the image is flattened(matrix to vector) into an MLP. 
+
+CNN architecture like VGG  work well with data that has a spatial relationship. Therefore CNNs are go-to method for any type of prediction problem involving image data as an input.The benefit of using CNNs is their ability to develop an internal representation of a two-dimensional image. This allows the model to learn position and scale in variant structures in the data, which is important when working with images.
+
